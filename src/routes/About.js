@@ -2,11 +2,17 @@ function About() {
     return (
         <>  
             <p>
-                Sammelband is a an article-collation service. You enter a bunch of URLs to articles you 
-                want to read later, and get a single (HTML | PDF | EPUB) file in return. The web pages are 
-                processed using Readability to extract the relevant content, and styled for a pleasant reading
-                experience. 
+                Sammelband is a an article-collation service. You feed it a bunch of article URLs 
+                (or articles from your <a href="getpocket.com/">Pocket</a> list), 
+                and get a single (HTML | PDF | EPUB) file in return. The web pages are processed 
+                to extract the relevant content, which is then styled for a pleasant reading experience. 
             </p>
+
+            <h3>How</h3>
+            <p>1. Supply one or more URLs manually or by connecting to your <a href="getpocket.com/">Pocket</a> account.</p>
+            <p>2. Select style and format options for your Sammelband. </p>
+            <p>3. Optionally include your email if you want to receive the resulting file as an email or an email attachment.</p>
+            <p>4. Submit!</p>
             
             <h3>Why?</h3>
             <p>
@@ -15,29 +21,26 @@ function About() {
                     many more
                 </a>.
 
-                I made this on a whim before a long flight, just as I was desperately trying to close 
-                some of my thousands of browser tabs. 
-
-                My aim is not to replace any of the aforementioned apps (I'm a longtime user of Pocket
-                myself). I'm not trying to reinvent archival or knowledge management here. Rather, 
-                I see Sammelband as a useful, short-term tool that helps me to get some reading done,
-                say when a long trip comes up. 
+                My aim is not to replace any of the aforementioned apps; I'm not trying to reinvent archival or knowledge management. Rather, 
+                I see Sammelband as a useful, short-term tool to get some actual reading done. Long trip coming up? 
+                Now you can read all those long essays and internet manifestos you've had open in your browser for the last 
+                three months. Print it on paper, even, if you're so inclined.
             </p>
          
             
-            <h3>Acknowledgments</h3>
-            <ul>
-                <li>forlater.email</li>
-            </ul>
-            <h3>How to use</h3>
+
             <h3>Technical stuff</h3>
             <h4>Back-end</h4>
             <ul>
-                <li>Express</li>
-                <li>Redis</li>
+                <li> Node
+                    <ul>
+                        <li>Express</li>
+                        <li>connect-redis</li>
+                        <li>Nodemailer</li>
+                    </ul>
+                </li>
                 <li>Readability by Mozilla</li>
                 <li>Puppeteer</li>
-                <li>Nodemailer</li>
             </ul>
             <h4>Front-end</h4>
             <ul>
@@ -45,9 +48,15 @@ function About() {
                 <li>sakura.css</li>
                 <li>Feather Icons</li>
             </ul>
+            <h4>Deployment</h4>
+            <ul>
+                <li>Hetzner</li>
+                <li>Nginx</li>
+                <li>Vercel</li>
+            </ul>
             
             <h3>Sammelwhat?</h3>
-            <p><a href="https://en.wikipedia.org/wiki/Sammelband">Sammelband</a></p>
+            <p><a href="https://en.wikipedia.org/wiki/Sammelband" target="_blank" rel="noreferrer">Sammelband</a></p>
         </>
     )
 }
