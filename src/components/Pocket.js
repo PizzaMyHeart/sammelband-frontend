@@ -15,7 +15,7 @@ function Pocket(props) {
         .then(response => response.json())
         .then(data => {
             const requestToken = data.requestToken;
-            const url = `https://getpocket.com/auth/authorize?request_token=${requestToken}&redirect_uri=http://localhost:3001/api/pocket/callback`;
+            const url = `https://getpocket.com/auth/authorize?request_token=${requestToken}&redirect_uri=${process.env.REACT_APP_API_DOMAIN}/api/pocket/callback`;
             redirectToPocket(url);
         })
         .catch(console.log);
