@@ -2,6 +2,7 @@ import Form from  './components/Form';
 import Navbar from './components/Navbar';
 import { Routes, Route} from "react-router-dom";
 import About from './routes/About';
+import Login from './routes/Login';
 import { useState, useEffect } from 'react';
 
 
@@ -37,6 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Form pocketLoggedIn={ pocketLoggedIn } setPocketLoggedIn={ setPocketLoggedIn }/>} />
         <Route path="/about" element={ <About />}/>
+        <Route path="/login" element={ <Login />}/>
       </Routes>
   
       
