@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Buttons from './Buttons';
 import Loading from './Loading';
+import Email from './Email';
 import Pocket from './Pocket';
 import UrlContainer from './UrlContainer';
 
@@ -114,13 +115,7 @@ function Form(props) {
         
     }
 
-    const validateEmail = (e) => {
-        const email = e.target.value;
-        const emailIsValid = RegExp(/^\S+@\S+\.\S\S+/).test(email);
-        !emailIsValid 
-        ? setFormErrors({...formErrors, email: true})
-        : setFormErrors({...formErrors, email: false});
-    }
+
 
     return ( 
         <> 
@@ -158,18 +153,11 @@ function Form(props) {
                     <input type="radio" value="epub" name="format" onChange={ setRadioValues }/> EPUB
                 </div>
                     
-                <div>
-                    <input type="submit" value="Submit" />
-                    <input 
-                        type="email" 
-                        placeholder="Your email (optional)" 
-                        name="email" 
-                        onChange={e => setEmail(e.target.value)}
-                        onBlur={e => validateEmail(e)}                        
-                        />
-                    <div>{ loading && <Loading />}</div>
-                    { formErrors.email && <p>Please enter a valid email</p> }
-                </div>
+                <Email 
+                    formErrors={ formErrors } setFormErrors={ setFormErrors }
+                    loading={ loading } 
+                    setEmail= { setEmail }
+                />
                 
 
                 <div id="messages">
