@@ -22,7 +22,7 @@ function Signup() {
         })
         .then(response => {
             if (response.ok) {
-                console.log(response);
+                console.log(response.text());
             }
         })
         .catch(err => console.log(err));
@@ -34,7 +34,7 @@ function Signup() {
                 <div>Username: <input type="text" onChange={ e => setNewUsername(e.target.value) }/></div>
                 <div>Password: <input type="password" onChange={ e => setNewPassword(e.target.value) }/></div>
                 <div>Email: <input type="email" onChange={ e => setNewEmail(e.target.value) }/></div>
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Sign up"/>
             </form>
         </>
     )

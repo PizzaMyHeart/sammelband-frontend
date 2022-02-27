@@ -19,6 +19,7 @@ function Form(props) {
     const [mailError, setMailError] = useState(false);
     const [pocketList, setPocketList] = useState(null);
     const [pocketLoggedIn, setPocketLoggedIn] = [props.pocketLoggedIn, props.setPocketLoggedIn]
+    const [loggedIn, setLoggedIn] = [props.loggedIn, props.setLoggedIn]; // App login state
 
     // Form data
     const [userUrls, setUserUrls] = useState({0: ''});

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Login(props) {
 
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
+
+    const [loggedIn, setLoggedIn] = [props.loggedIn, props.setLoggedIn];
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,6 +25,13 @@ function Login() {
         .then(response => {
             if (response.ok) {
                 console.log(response);
+                return response.json();
+            }
+        })
+        .then(data => {
+            console.log(data);
+            if (data.loggedIn === true) {
+                setLoggedIn(true);
             }
         })
         .catch(err => console.log(err));

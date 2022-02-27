@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [ pocketLoggedIn, setPocketLoggedIn ] = useState(false);
+  const [ loggedIn, setLoggedIn ] = useState(false);
 
   const firstLoad = () => {
     console.log('firstload()');
@@ -37,9 +38,9 @@ function App() {
       <h1>Sammelband</h1>
 
       <Routes>
-        <Route path="/" element={ <Form pocketLoggedIn={ pocketLoggedIn } setPocketLoggedIn={ setPocketLoggedIn }/>} />
+        <Route path="/" element={ <Form pocketLoggedIn={ pocketLoggedIn } setPocketLoggedIn={ setPocketLoggedIn } loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }/>} />
         <Route path="/about" element={ <About />}/>
-        <Route path="/login" element={ <Login />}/>
+        <Route path="/login" element={ <Login loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }/>}/>
         <Route path="/signup" element={ <Signup />}/>
 
       </Routes>
