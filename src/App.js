@@ -22,8 +22,8 @@ function App() {
     .then(data => {
       //console.log(data);
       //console.log('Pocket logged in: ', data.pocketLoggedIn);
-      if (data.pocketLoggedIn) setPocketLoggedIn(true);
-      else if (!data.pocketLoggedIn) setPocketLoggedIn(false);
+      data.pocketLoggedIn ? setPocketLoggedIn(true) : setPocketLoggedIn(false);
+      data.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
     })
     .catch(err => console.log(err));
   }
