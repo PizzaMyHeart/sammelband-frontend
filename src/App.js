@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [ pocketLoggedIn, setPocketLoggedIn ] = useState(false);
   const [ loggedIn, setLoggedIn ] = useState(false);
+  const [email, setEmail] = useState('');
 
   const firstLoad = () => {
     console.log('firstload()');
@@ -20,10 +21,11 @@ function App() {
     })
     .then(response => response.json())
     .then(data => {
-      //console.log(data);
+      console.log(data);
       //console.log('Pocket logged in: ', data.pocketLoggedIn);
       data.pocketLoggedIn ? setPocketLoggedIn(true) : setPocketLoggedIn(false);
       data.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
+      data.email.length > 0 ? setEmail(data.email) : setEmail('')
     })
     .catch(err => console.log(err));
   }
@@ -38,7 +40,12 @@ function App() {
       <h1>Sammelband</h1>
 
       <Routes>
-        <Route path="/" element={ <Form pocketLoggedIn={ pocketLoggedIn } setPocketLoggedIn={ setPocketLoggedIn } loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }/>} />
+        <Route path="/" element=
+          { <Form 
+              pocketLoggedIn={ pocketLoggedIn } setPocketLoggedIn={ setPocketLoggedIn } 
+              loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }
+              email={ email } setEmail={ setEmail }
+              />} />
         <Route path="/about" element={ <About />}/>
         <Route path="/login" element={ <Login loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }/>}/>
         <Route path="/signup" element={ <Signup />}/>

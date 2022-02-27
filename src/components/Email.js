@@ -13,8 +13,7 @@ function Email(props) {
         : setFormErrors({...formErrors, email: false});
     }
     return (
-        <div>
-            <input type="submit" value="Submit" />
+        <>
             <input 
                 type="email" 
                 placeholder="Your email (optional)" 
@@ -24,7 +23,7 @@ function Email(props) {
                 />
             <div>{ loading && <Loading />}</div>
             { formErrors.email && <p>Please enter a valid email</p> }
-        </div>
+        </>
     )
 }
 

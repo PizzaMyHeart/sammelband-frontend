@@ -28,7 +28,7 @@ function Form(props) {
     const [color, setColor] = useState('light');
     const [font, setFont] = useState('sansSerif');
     const [format, setFormat] = useState('html');
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = [props.email, props.setEmail];
 
 
     
@@ -152,14 +152,19 @@ function Form(props) {
                     <input type="radio" value="pdf" name="format" onChange={ setRadioValues }/> PDF 
                     <input type="radio" value="epub" name="format" onChange={ setRadioValues }/> EPUB
                 </div>
-                    
-                <Email 
-                    formErrors={ formErrors } setFormErrors={ setFormErrors }
-                    loading={ loading } 
-                    setEmail= { setEmail }
-                />
-                
 
+                <div>
+                <input type="submit" value="Submit" />
+                { 
+                    loggedIn 
+                    ? <p>Your email: { email }</p>
+                    : <Email 
+                        formErrors={ formErrors } setFormErrors={ setFormErrors }
+                        loading={ loading } 
+                        setEmail= { setEmail }
+                    />
+                }
+                </div>
                 <div id="messages">
                     <div id="error-messages">
                         { submitError && <p>{ submitError }</p>}
