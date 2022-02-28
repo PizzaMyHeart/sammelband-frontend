@@ -5,6 +5,7 @@ function Login(props) {
 
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
+    const [email, setEmail] = [props.email, props.setEmail];
 
     const [loggedIn, setLoggedIn] = [props.loggedIn, props.setLoggedIn];
 
@@ -32,6 +33,8 @@ function Login(props) {
             console.log(data);
             if (data.loggedIn === true) {
                 setLoggedIn(true);
+                setEmail(data.email);
+                
             }
         })
         .catch(err => console.log(err));

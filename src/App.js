@@ -1,5 +1,6 @@
 import Form from  './components/Form';
 import Navbar from './components/Navbar';
+import { Link } from 'react-router-dom';
 import { Routes, Route} from "react-router-dom";
 import About from './routes/About';
 import Login from './routes/Login';
@@ -25,7 +26,7 @@ function App() {
       //console.log('Pocket logged in: ', data.pocketLoggedIn);
       data.pocketLoggedIn ? setPocketLoggedIn(true) : setPocketLoggedIn(false);
       data.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
-      data.email.length > 0 ? setEmail(data.email) : setEmail('')
+      setEmail(data.email);
     })
     .catch(err => console.log(err));
   }
@@ -38,7 +39,7 @@ function App() {
     <div className="App">
       <Navbar />
       <h1>Sammelband</h1>
-
+      <Link to="/login">Login</Link>
       <Routes>
         <Route path="/" element=
           { <Form 
@@ -47,7 +48,7 @@ function App() {
               email={ email } setEmail={ setEmail }
               />} />
         <Route path="/about" element={ <About />}/>
-        <Route path="/login" element={ <Login loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }/>}/>
+        <Route path="/login" element={ <Login loggedIn={ loggedIn } setLoggedIn={ setLoggedIn } email={ email } setEmail={ setEmail }/>}/>
         <Route path="/signup" element={ <Signup />}/>
 
       </Routes>
