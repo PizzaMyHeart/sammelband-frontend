@@ -142,3 +142,26 @@ input[type="url"] {
 .url-field {
   margin-bottom: 1em
 }
+
+#logged-in-container {
+  display: flex;
+  align-items: center;
+}
+
+#logged-in-container > button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#logged-in-container > button > p {
+  color: black;
+  margin: 0;
+}
+
+#logged-in-container > button :hover {
+  text-decoration: underline;
+}
+
+#logged-in-container > p {
+  margin: 0
+}

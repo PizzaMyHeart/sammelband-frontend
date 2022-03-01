@@ -121,7 +121,7 @@ function Form(props) {
     return ( 
         <> 
             {loggedIn 
-            ? <div><p>Logged in as { email }.</p> <Logout setLoggedIn={ setLoggedIn }/></div>
+            ? <div id="logged-in-container"><p>Logged in as { email }.</p> <Logout setLoggedIn={ setLoggedIn }/></div>
             : <Link to="/login">Log in</Link>}
             <form onSubmit={ handleSubmit }> 
                 <label>

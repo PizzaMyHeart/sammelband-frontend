@@ -19,7 +19,7 @@ function Logout(props) {
 
     return (
         <>
-            <button onClick={ logout }><img src={ logoutIcon} alt="Log out icon"/></button>
+            <button onClick={ logout }><p>[Log out]</p></button>
         </>
     )
 };
