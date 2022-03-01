@@ -34,7 +34,7 @@ function Login(props) {
             if (data.loggedIn === true) {
                 setLoggedIn(true);
                 setEmail(data.email);
-                
+                window.location = '/';
             }
         })
         .catch(err => console.log(err));
