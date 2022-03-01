@@ -8,6 +8,7 @@ function Login(props) {
     const [email, setEmail] = [props.email, props.setEmail];
 
     const [loggedIn, setLoggedIn] = [props.loggedIn, props.setLoggedIn];
+    const [loginError, setLoginError] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -35,6 +36,8 @@ function Login(props) {
                 setLoggedIn(true);
                 setEmail(data.email);
                 window.location = '/';
+            } else if (data.loggedIn === false) {
+                setLoginError(true);
             }
         })
         .catch(err => console.log(err));
@@ -48,6 +51,7 @@ function Login(props) {
 
                 <input type="submit" value="Login"></input>
             </form>
+            { loginError && <p>Please try again. </p>}
             <div>Don't have an account? <Link to="/signup">Sign up</Link> instead.</div>
         </>
     )
