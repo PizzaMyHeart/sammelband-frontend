@@ -12,6 +12,7 @@ function App() {
   const [ pocketLoggedIn, setPocketLoggedIn ] = useState(false);
   const [ loggedIn, setLoggedIn ] = useState(false);
   const [email, setEmail] = useState('');
+  const [verified, setVerified] = useState(false);
 
   const firstLoad = () => {
     console.log('firstload()');
@@ -23,10 +24,10 @@ function App() {
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      //console.log('Pocket logged in: ', data.pocketLoggedIn);
-      data.pocketLoggedIn ? setPocketLoggedIn(true) : setPocketLoggedIn(false);
-      data.loggedIn ? setLoggedIn(true) : setLoggedIn(false);
+      setPocketLoggedIn(data.pocketLoggedIn);
+      setLoggedIn(data.loggedIn);
       setEmail(data.email);
+      setVerified(data.verified);
     })
     .catch(err => console.log(err));
   }
