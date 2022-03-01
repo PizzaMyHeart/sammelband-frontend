@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-function Signup() {
+function Signup(props) {
     const [newPassword, setNewPassword] = useState(null);
     const [newEmail, setNewEmail] = useState(null);
+    const [formErrors, setFormErrors] = [props.formErrors, props.setFormErrors];
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,12 +27,27 @@ function Signup() {
         .catch(err => console.log(err));
     }
 
+    const validateEmail = (e) => {
+        const email = e.target.value;
+        const emailIsValid = RegExp(/^\S+@\S+\.\S\S+/).test(email);
+        !emailIsValid 
+        ? setFormErrors({...formErrors, email: true})
+        : setFormErrors({...formErrors, email: false});
+    }
+
     return (
         <>
             <form onSubmit={ handleSubmit }>
-                <div>Email: <input type="email" onChange={ e => setNewEmail(e.target.value) }/></div>
+                <div>Email: 
+                    <input 
+                        type="email" 
+                        onChange={ e => setNewEmail(e.target.value) }
+                        onBlur={e => validateEmail(e)} 
+                        />
+                </div>
                 <div>Password: <input type="password" onChange={ e => setNewPassword(e.target.value) }/></div>
                 <input type="submit" value="Sign up"/>
+                { formErrors.email && <p>Please enter a valid email address.</p> }
             </form>
         </>
     )

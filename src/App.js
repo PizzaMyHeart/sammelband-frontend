@@ -15,6 +15,11 @@ function App() {
   const [email, setEmail] = useState('');
   const [verified, setVerified] = useState(false);
 
+  const [formErrors, setFormErrors] = useState({
+    url: [], // array of ids of invalid URLs
+    email: false
+})
+
   const firstLoad = () => {
     console.log('firstload()');
     fetch(`${process.env.REACT_APP_API_DOMAIN}/api`, {
@@ -50,11 +55,12 @@ function App() {
               pocketLoggedIn={ pocketLoggedIn } setPocketLoggedIn={ setPocketLoggedIn } 
               loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }
               email={ email } setEmail={ setEmail }
+              formErrors={ formErrors } setFormErrors={ setFormErrors }
               verified={ verified }
               />} />
         <Route path="/about" element={ <About />}/>
         <Route path="/login" element={ <Login loggedIn={ loggedIn } setLoggedIn={ setLoggedIn } email={ email } setEmail={ setEmail }/>}/>
-        <Route path="/signup" element={ <Signup />}/>
+        <Route path="/signup" element={ <Signup formErrors={ formErrors } setFormErrors={ setFormErrors }/>}/>
 
       </Routes>
   
