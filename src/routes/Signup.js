@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import ResendVerification from '../components/ResendVerification';
 
 function Signup(props) {
     const [newPassword, setNewPassword] = useState(null);
     const [newEmail, setNewEmail] = useState(null);
     const [formErrors, setFormErrors] = [props.formErrors, props.setFormErrors];
+    const [success, setSuccess] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +24,8 @@ function Signup(props) {
         .then(response => {
             if (response.ok) {
                 console.log(response.text());
-            }
+                setSuccess(true);
+            } 
         })
         .catch(err => console.log(err));
     }
@@ -50,6 +53,12 @@ function Signup(props) {
                 <div>Password: <input type="password" onChange={ e => setNewPassword(e.target.value) }/></div>
                 <input type="submit" value="Sign up"/>
                 { formErrors.email && <p>Please enter a valid email address.</p> }
+                { success && 
+                    <div>
+                        <p>Verification email sent. Please check your inbox at { newEmail }</p>
+                        <ResendVerification />
+                    </div>
+                }
             </form>
         </>
     )

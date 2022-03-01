@@ -148,6 +148,20 @@ input[type="url"] {
   align-items: center;
 }
 
+.button-with-text {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: black !important;
+  margin: 0;
+}
+
+.button-with-text:hover{
+  text-decoration: underline;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: black !important;
+}
+
 #logged-in-container > button {
   background-color: transparent;
   border-color: transparent;
@@ -164,4 +178,8 @@ input[type="url"] {
 
 #logged-in-container > p {
   margin: 0
+}
+
+.small-text {
+  font-size: 0.75em;
 }

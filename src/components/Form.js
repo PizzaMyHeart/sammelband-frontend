@@ -6,6 +6,7 @@ import Logout from './Logout';
 import Email from './Email';
 import Pocket from './Pocket';
 import UrlContainer from './UrlContainer';
+import ResendVerification from './ResendVerification';
 
 
 function Form(props) {
@@ -125,10 +126,10 @@ function Form(props) {
             ? <div id="logged-in-container"><p>Logged in as { loggedInAs }.</p> <Logout setLoggedIn={ setLoggedIn }/></div>
             : <Link to="/login">Log in</Link>}
             <form onSubmit={ handleSubmit }> 
-            { !verified && <p>Unverified</p>}
+            { !verified && loggedIn && <div id="logged-in-container"><p className="small-text">Unverified</p><ResendVerification /></div>}
                 <label>
                     URLs
-                    <div><sub>Prefixed with http(s)</sub></div>
+                    <div className="small-text">Prefixed with http(s)</div>
                     <UrlContainer 
                         userUrls={ userUrls }
                         setUserUrls={ setUserUrls }
