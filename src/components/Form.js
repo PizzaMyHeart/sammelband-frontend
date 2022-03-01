@@ -21,6 +21,7 @@ function Form(props) {
     const [pocketList, setPocketList] = useState(null);
     const [pocketLoggedIn, setPocketLoggedIn] = [props.pocketLoggedIn, props.setPocketLoggedIn]
     const [loggedIn, setLoggedIn] = [props.loggedIn, props.setLoggedIn]; // App login state
+    const verified = props.verified;
 
     // Form data
     const [userUrls, setUserUrls] = useState({0: ''});
@@ -29,6 +30,7 @@ function Form(props) {
     const [font, setFont] = useState('sansSerif');
     const [format, setFormat] = useState('html');
     const [email, setEmail] = [props.email, props.setEmail];
+    
 
 
     
@@ -156,7 +158,7 @@ function Form(props) {
                 <div>
                 <input type="submit" value="Submit" />
                 { 
-                    loggedIn 
+                    (loggedIn && verified)
                     ? <p>Your email: { email }</p>
                     : <Email 
                         formErrors={ formErrors } setFormErrors={ setFormErrors }

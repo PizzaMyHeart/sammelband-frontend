@@ -47,6 +47,7 @@ function App() {
               pocketLoggedIn={ pocketLoggedIn } setPocketLoggedIn={ setPocketLoggedIn } 
               loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }
               email={ email } setEmail={ setEmail }
+              verified={ verified }
               />} />
         <Route path="/about" element={ <About />}/>
         <Route path="/login" element={ <Login loggedIn={ loggedIn } setLoggedIn={ setLoggedIn } email={ email } setEmail={ setEmail }/>}/>
