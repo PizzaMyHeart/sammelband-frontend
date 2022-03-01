@@ -19,7 +19,7 @@ function Login(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                username: username,
+                email: email,
                 password: password
             })
         })
@@ -43,7 +43,7 @@ function Login(props) {
     return (
         <>
             <form onSubmit={ handleSubmit }>
-                <div>Username: <input type="text" onChange={ e => setUsername(e.target.value)}/></div>
+                <div>Email: <input type="email" onChange={ e => setEmail(e.target.value)}/></div>
                 <div>Password: <input type="password" onChange={ e => setPassword(e.target.value)}/></div>
 
                 <input type="submit" value="Login"></input>
