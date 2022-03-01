@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Buttons from './Buttons';
 import Loading from './Loading';
+import Logout from './Logout';
 import Email from './Email';
 import Pocket from './Pocket';
 import UrlContainer from './UrlContainer';
@@ -118,6 +120,9 @@ function Form(props) {
 
     return ( 
         <> 
+            {loggedIn 
+            ? <div><p>Logged in as { email }.</p> <Logout setLoggedIn={ setLoggedIn }/></div>
+            : <Link to="/login">Log in</Link>}
             <form onSubmit={ handleSubmit }> 
                 <label>
                     URLs
