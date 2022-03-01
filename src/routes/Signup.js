@@ -42,6 +42,7 @@ function Signup(props) {
                 <div>Email: 
                     <input 
                         type="email" 
+                        placeholder="Your email"
                         onChange={ e => setNewEmail(e.target.value) }
                         onBlur={e => validateEmail(e)} 
                         />

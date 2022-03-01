@@ -131,7 +131,7 @@ button > img {
 }
 
 input[type="email"] {
-  margin-left: 2em;
+  margin-right: 1em;
 }
 
 /* Reset url input margins */

@@ -19,7 +19,7 @@ function Email(props) {
         <>
             <input 
                 type="email" 
-                placeholder="Temporary email" 
+                placeholder="Temporary email (optional)" 
                 name="email" 
                 onChange={e => setEmail(e.target.value)}
                 onBlur={e => validateEmail(e)}                        

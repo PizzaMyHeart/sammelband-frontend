@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import { Link } from 'react-router-dom';
 import { Routes, Route} from "react-router-dom";
 import About from './routes/About';
+import Donate from './routes/Donate';
 import Login from './routes/Login';
 import Logout from './components/Logout';
 import Signup from './routes/Signup';
@@ -59,6 +60,7 @@ function App() {
               verified={ verified }
               />} />
         <Route path="/about" element={ <About />}/>
+        <Route path="/donate" element={ <Donate />}/>
         <Route path="/login" element={ <Login loggedIn={ loggedIn } setLoggedIn={ setLoggedIn } email={ email } setEmail={ setEmail }/>}/>
         <Route path="/signup" element={ <Signup formErrors={ formErrors } setFormErrors={ setFormErrors }/>}/>
 

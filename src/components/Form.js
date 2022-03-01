@@ -12,10 +12,7 @@ function Form(props) {
     const [emailSent, setEmailSent] = useState(false);
     const [loading, setLoading] = useState(false);
     const [submitError, setSubmitError] = useState(null);
-    const [formErrors, setFormErrors] = useState({
-        url: [], // array of ids of invalid URLs
-        email: false
-    })
+    const [formErrors, setFormErrors] = [props.formErrors, props.setFormErrors];
     const [badUrls, setBadUrls] = useState(null);
     const [mailError, setMailError] = useState(false);
     const [pocketList, setPocketList] = useState(null);
@@ -156,7 +153,7 @@ function Form(props) {
                 </div>
 
                 <div>
-                <input type="submit" value="Submit" />
+                
                 { 
                     (loggedIn && verified)
                     ? <p>Your email: { email }</p>
@@ -166,6 +163,7 @@ function Form(props) {
                         setEmail= { setEmail }
                     />
                 }
+                <input type="submit" value="Submit" />
                 </div>
                 <div id="messages">
                     <div id="error-messages">
