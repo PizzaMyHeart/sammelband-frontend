@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Routes, Route} from "react-router-dom";
 import About from './routes/About';
 import Login from './routes/Login';
+import Logout from './components/Logout';
 import Signup from './routes/Signup';
 import { useState, useEffect } from 'react';
 
@@ -40,7 +41,9 @@ function App() {
     <div className="App">
       <Navbar />
       <h1>Sammelband</h1>
-      <Link to="/login">Login</Link>
+      {loggedIn 
+      ? <div><p>Logged in as { email }.</p> <Logout setLoggedIn={ setLoggedIn }/></div>
+      : <Link to="/login">Login</Link>}
       <Routes>
         <Route path="/" element=
           { <Form 
