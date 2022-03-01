@@ -19,7 +19,7 @@ function UrlContainer(props) {
 
     return (
         <>
-            <button type="button" onClick={ insertUrlField }>+</button>
+            <button type="button" onClick={ insertUrlField }>Add URL</button>
             <div className="scrolling-div">
                 {
                     Object.keys(userUrls).map(key => {

@@ -45,11 +45,12 @@ function Login(props) {
 
     return (
         <>
+            <h4>Log in</h4>
             <form onSubmit={ handleSubmit }>
                 <div>Email: <input type="email" onChange={ e => setEmail(e.target.value)}/></div>
                 <div>Password: <input type="password" onChange={ e => setPassword(e.target.value)}/></div>
 
-                <input type="submit" value="Login"></input>
+                <input type="submit" value="Log in"></input>
             </form>
             { loginError && <p>Please try again. </p>}
             <div>Don't have an account? <Link to="/signup">Sign up</Link> instead.</div>

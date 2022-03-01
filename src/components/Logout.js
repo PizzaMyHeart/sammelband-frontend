@@ -1,3 +1,5 @@
+import logoutIcon from '../icons/log-out.svg';
+
 function Logout(props) {
     const setLoggedIn = props.setLoggedIn;
 
@@ -17,7 +19,7 @@ function Logout(props) {
 
     return (
         <>
-            <button onClick={ logout }>Log out</button>
+            <button onClick={ logout }><img src={ logoutIcon} alt="Log out icon"/></button>
         </>
     )
 };

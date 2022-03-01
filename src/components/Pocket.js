@@ -63,7 +63,7 @@ function Pocket(props) {
             */}
             { props.pocketLoggedIn
                 ? <button type="button" onClick={ getPocketList }>Get Pocket list</button>
-                : <button type="button" onClick={ getPocketRequestToken }>Pocket</button>
+                : <button type="button" onClick={ getPocketRequestToken }>Connect to Pocket</button>
             }
             <div className="scrolling-div">
                 { props.pocketList && Object.keys(props.pocketList).map(key => {

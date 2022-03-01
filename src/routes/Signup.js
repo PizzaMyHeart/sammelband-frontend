@@ -36,7 +36,8 @@ function Signup(props) {
     }
 
     return (
-        <>
+        <>  
+            <h4>Sign up</h4>
             <form onSubmit={ handleSubmit }>
                 <div>Email: 
                     <input 

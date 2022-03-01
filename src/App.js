@@ -48,7 +48,7 @@ function App() {
       <h1>Sammelband</h1>
       {loggedIn 
       ? <div><p>Logged in as { email }.</p> <Logout setLoggedIn={ setLoggedIn }/></div>
-      : <Link to="/login">Login</Link>}
+      : <Link to="/login">Log in</Link>}
       <Routes>
         <Route path="/" element=
           { <Form 
