@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const [ pocketLoggedIn, setPocketLoggedIn ] = useState(false);
   const [ loggedIn, setLoggedIn ] = useState(false);
+  const [ loggedInAs, setLoggedInAs ] = useState('');
   const [email, setEmail] = useState('');
   const [verified, setVerified] = useState(false);
 
@@ -33,8 +34,9 @@ function App() {
       console.log(data);
       setPocketLoggedIn(data.pocketLoggedIn);
       setLoggedIn(data.loggedIn);
-      setEmail(data.email);
+      setLoggedInAs(data.loggedInAs);
       setVerified(data.verified);
+      data.verified ? setEmail(data.email) : setEmail(''); // Don't use unverified email
     })
     .catch(err => console.log(err));
   }
@@ -52,6 +54,7 @@ function App() {
           { <Form 
               pocketLoggedIn={ pocketLoggedIn } setPocketLoggedIn={ setPocketLoggedIn } 
               loggedIn={ loggedIn } setLoggedIn={ setLoggedIn }
+              loggedInAs={ loggedInAs } setLoggedInAs={ setLoggedInAs}
               email={ email } setEmail={ setEmail }
               formErrors={ formErrors } setFormErrors={ setFormErrors }
               verified={ verified }

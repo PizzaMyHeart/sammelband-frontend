@@ -20,6 +20,7 @@ function Form(props) {
     const [pocketList, setPocketList] = useState(null);
     const [pocketLoggedIn, setPocketLoggedIn] = [props.pocketLoggedIn, props.setPocketLoggedIn]
     const [loggedIn, setLoggedIn] = [props.loggedIn, props.setLoggedIn]; // App login state
+    const [loggedInAs, setLoggedInAs] = [props.loggedInAs, props.setLoggedInAs] // Display name
     const verified = props.verified;
 
     // Form data
@@ -121,9 +122,10 @@ function Form(props) {
     return ( 
         <> 
             {loggedIn 
-            ? <div id="logged-in-container"><p>Logged in as { email }.</p> <Logout setLoggedIn={ setLoggedIn }/></div>
+            ? <div id="logged-in-container"><p>Logged in as { loggedInAs }.</p> <Logout setLoggedIn={ setLoggedIn }/></div>
             : <Link to="/login">Log in</Link>}
             <form onSubmit={ handleSubmit }> 
+            { !verified && <p>Unverified</p>}
                 <label>
                     URLs
                     <div><sub>Prefixed with http(s)</sub></div>
