@@ -10,7 +10,7 @@ function About() {
             <p>
                 Sammelband is a an article-collation service. You feed it a bunch of article URLs 
                 (or articles from your <a href="getpocket.com/">Pocket</a> list), 
-                and get a single (HTML | PDF | EPUB) file&mdash;the titular virtual <a href="https://en.wikipedia.org/wiki/Sammelband" target="_blank" rel="noreferrer">Sammelband</a>&mdash;in return. The web pages are processed 
+                and get a single (HTML | PDF | EPUB) file&mdash;the titular virtual <a href="https://en.wikipedia.org/wiki/Sammelband" target="_blank" rel="noreferrer">sammelband</a>&mdash;in return. The web pages are processed 
                 to extract the relevant content, which is then styled for a better reading experience. 
             </p>
 
@@ -21,17 +21,17 @@ function About() {
             </p>
 
             <p>
-                Signing up for an account is optional. To prevent misuse of the email service, an account is required to receive Sammelbands in your personal email inbox.
+                Signing up for an account is optional. To prevent misuse of the email service, an account is required to receive sammelbands in your personal email inbox.
             </p>
 
             <h3>How</h3>
             <p>1. Supply one or more URLs manually or by connecting to your <a href="getpocket.com/">Pocket</a> account.</p>
-            <p>2. Select style and format options for your Sammelband. </p>
+            <p>2. Select style and format options for your sammelband. </p>
             <p>3. To receive the resulting file as an email or an email attachment</p>
-            <p><i>Skip this step if you only need to download the Sammelband to your device.</i></p>
+            <p><i>Skip this step if you only need to download the sammelband to your device.</i></p>
             <ul>
                 <li>Non-logged in users: use a temporary email address from one of the services listed <a href="#supported-temp-emails">below</a>.</li>
-                <li>Logged in users: Sammelbands will be sent to the email address you signed up with.</li>
+                <li>Logged in users: sammelbands will be sent to the email address you signed up with.</li>
             </ul>
             
             <p>4. Submit!</p>
@@ -49,11 +49,12 @@ function About() {
            
 
             <h4 id="supported-temp-emails">Supported temporary emails</h4>
-                <ul>
-                    <li><a href="https://mail.tm/en/" target="_blank" rel="noreferrer">mail.tm</a> (best option - applies Sammelband HTML styles)</li>
-                    <li><a href="https://temp-mail.org/en/" target="_blank" rel="noreferrer">temp-mail.org</a> (uses their own HTML styles)</li>
-                    <li><a href="https://www.guerrillamail.com" target="_blank" rel="noreferrer">Guerrilla Mail</a> (use unscrambled address)</li>
-                </ul>
+            <p>Create an account to use your own email address. Otherwise, use a temporary email service.</p>
+            <ul>
+                <li><a href="https://mail.tm/en/" target="_blank" rel="noreferrer">mail.tm</a> (best option - applies Sammelband HTML styles)</li>
+                <li><a href="https://temp-mail.org/en/" target="_blank" rel="noreferrer">temp-mail.org</a> (uses their own HTML styles)</li>
+                <li><a href="https://www.guerrillamail.com" target="_blank" rel="noreferrer">Guerrilla Mail</a> (use unscrambled address)</li>
+            </ul>
             
             <h3>Why?</h3>
             <p>
