@@ -6,7 +6,6 @@ function UrlField(props) {
     const id = props.id
     const userUrls = props.userUrls;
     const setUserUrls = props.setUserUrls;
-    const handleCheckboxChange = props.handleCheckboxChange;
     const [formErrors, setFormErrors] = [props.formErrors, props.setFormErrors];
     
     useEffect(() => {
@@ -60,19 +59,22 @@ function UrlField(props) {
 
 
     return (
-        <div className="url-field">
-            <input 
-                type="url" 
-                id={ id } 
-                onChange={ e => handleChange(e) } 
-                onBlur={ e => validateUrl(e) }
-                value={ userUrls[id] } // This will keep the value of the existing url after it
-                />
-            <button type="button" onClick={ handleDelete }>
-                <img src={ trashIcon } alt="Delete icon"/>
-            </button>
-            { (formErrors.url.length > 0 && formErrors.url.includes(id)) && <p>Please enter a valid URL.</p> }
-        </div>
+        <>
+            <div className="url-field">
+                <input 
+                    type="url" 
+                    id={ id } 
+                    onChange={ e => handleChange(e) } 
+                    onBlur={ e => validateUrl(e) }
+                    value={ userUrls[id] } // This will keep the value of the existing url after it
+                    />
+                <button type="button" onClick={ handleDelete }>
+                    <img src={ trashIcon } alt="Delete icon"/>
+                </button>
+                
+            </div>
+            { (formErrors.url.length > 0 && formErrors.url.includes(id)) && <p>Please enter a valid URL ⮥ </p> }
+        </>
     )
 };
 
