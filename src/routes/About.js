@@ -1,7 +1,8 @@
 import downloadIcon from '../icons/download.svg';
 import mailIcon from '../icons/mail.svg';
 import attachmentIcon from '../icons/paperclip.svg';
-import trashIcon from '../icons/trash-2.svg'
+import trashIcon from '../icons/trash-2.svg';
+import { Link } from 'react-router-dom';
 
 function About() {
     return (
@@ -10,20 +11,27 @@ function About() {
                 Sammelband is a an article-collation service. You feed it a bunch of article URLs 
                 (or articles from your <a href="getpocket.com/">Pocket</a> list), 
                 and get a single (HTML | PDF | EPUB) file&mdash;the titular virtual <a href="https://en.wikipedia.org/wiki/Sammelband" target="_blank" rel="noreferrer">Sammelband</a>&mdash;in return. The web pages are processed 
-                to extract the relevant content, which is then styled for a pleasant reading experience. 
+                to extract the relevant content, which is then styled for a better reading experience. 
             </p>
 
             <p>
-                Signing up for an account is optional. An account is required to receive Sammelbands in your personal email inbox 
-                (to prevent misuse of the email service).
+                Long trip coming up? 
+                Now you can read all those long essays and internet manifestos you've had open in your browser for the last 
+                three months. Put them all into a PDF which you can annotate to your heart's content. Email it to yourself. Print it on paper, even, if you're so inclined.
+            </p>
+
+            <p>
+                Signing up for an account is optional. To prevent misuse of the email service, an account is required to receive Sammelbands in your personal email inbox.
             </p>
 
             <h3>How</h3>
             <p>1. Supply one or more URLs manually or by connecting to your <a href="getpocket.com/">Pocket</a> account.</p>
             <p>2. Select style and format options for your Sammelband. </p>
             <p>3. To receive the resulting file as an email or an email attachment: </p>
-            <p>- Non-logged in users: include a temporary email address from one of the services listed below.</p>
-            <p>- Logged in users: Sammelbands will be sent to the email address you signed up with.</p>
+            <ul>
+                <li>Non-logged in users: use a temporary email address from one of the services listed <a href="#supported-temp-emails">below</a>.</li>
+                <li>Logged in users: Sammelbands will be sent to the email address you signed up with.</li>
+            </ul>
             <p>4. Submit!</p>
             <p>5. Now you can perform any of the following actions: </p>
             
@@ -48,20 +56,30 @@ function About() {
                 There are many established players in the bookmarking/read-it-later space, such as Pocket,
                 Instapaper, Pinboard, and <a href="https://hn.algolia.com/?dateRange=all&page=0&prefix=true&query=show%20hn%20bookmark&sort=byPopularity&type=story">
                     many more
-                </a>.
-
-                My aim is not to replace any of the above; I'm not trying to reinvent archival or knowledge management. Rather, 
-                I see Sammelband as a useful, short-term tool to get some actual reading done. Long trip coming up? 
-                Now you can read all those long essays and internet manifestos you've had open in your browser for the last 
-                three months. Print it on paper, even, if you're so inclined.
+                </a>.                
             </p>
+
+            <p>So what's the point of Sammelband?</p>
+
+            <p>Say I have a bunch of articles expounding the virtues or sins of Web 3.0. They may have accumulated in my Pocket list over some time, 
+                or, more likely, in the midst of countless perpetually open browser tabs. Sammelband lets me stitch them all together into one file, which
+                I'm hopefully more likely to actually sit down and read. I view Sammelband as a useful <i>augment</i> to my existing workflow of 
+                [ article discovery ] → [ consumption ] → [ reflection ] → [ archival ].
+            </p>
+
+            <p>Ultimately, though, Sammelband is a personal experiment; it remains to be seen how useful it actually is. </p>
+
+            <h3>Is this free?</h3>
+            <p>Yes! This is a learning project that has been challenging enough without the overhead of running a business. </p>
+
+            <p>That said, please consider <Link to="/donate">donating</Link> if you find this useful. Any amount will help offset hosting costs.</p>
          
             
             <h3>ಠ_ಠ</h3>
             <h6>Known limitations</h6>
             <ul>
                 <li>Sammelband styling is a work in progress</li>
-                <li>Ordering of articles in a Sammelband cannot be changed</li>
+                <li>The ordering of articles in a Sammelband cannot be altered</li>
             </ul>
             <h6>Found a bug?</h6>
             <p>Please <a href="mailto:admin@sammelband.app">send me an email</a>.</p>
@@ -75,7 +93,7 @@ function About() {
                 <li> Node
                     <ul>
                         <li>Express</li>
-                        <li>connect-redis</li>
+                        <li>connect-redis for session storage</li>
                         <li>Nodemailer</li>
                     </ul>
                 </li>
@@ -88,6 +106,7 @@ function About() {
                 <li>React</li>
                 <li>sakura.css</li>
                 <li>Feather Icons</li>
+                <li>Favicon generated using favicon.io</li>
             </ul>
             <h4>Deployment</h4>
             <ul>
