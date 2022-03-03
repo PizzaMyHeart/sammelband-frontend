@@ -140,7 +140,11 @@ input[type="url"] {
 }
 
 .url-field {
-  margin-bottom: 1em
+  margin-bottom: 1em;
+}
+
+.url-field > input {
+  width: 75%
 }
 
 #logged-in-container {

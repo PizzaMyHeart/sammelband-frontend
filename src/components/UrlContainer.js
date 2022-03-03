@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import UrlField from './UrlField';
 
 function UrlContainer(props) {
