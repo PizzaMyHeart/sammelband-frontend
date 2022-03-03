@@ -75,7 +75,8 @@ function Form(props) {
                 color: color,
                 font: font,
                 format: format,
-                email: email
+                email: email,
+                date: new Date().toUTCString()
             })
         })
         .then(response => {
