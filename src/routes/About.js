@@ -27,21 +27,25 @@ function About() {
             <h3>How</h3>
             <p>1. Supply one or more URLs manually or by connecting to your <a href="getpocket.com/">Pocket</a> account.</p>
             <p>2. Select style and format options for your Sammelband. </p>
-            <p>3. To receive the resulting file as an email or an email attachment: </p>
+            <p>3. To receive the resulting file as an email or an email attachment</p>
+            <p><i>Skip this step if you only need to download the Sammelband to your device.</i></p>
             <ul>
                 <li>Non-logged in users: use a temporary email address from one of the services listed <a href="#supported-temp-emails">below</a>.</li>
                 <li>Logged in users: Sammelbands will be sent to the email address you signed up with.</li>
             </ul>
+            
             <p>4. Submit!</p>
             <p>5. Now you can perform any of the following actions: </p>
             
-            <p><img src={ trashIcon } alt="Trash can icon"/> Delete the Sammelband</p>
+            <p><img src={ trashIcon } alt="Trash can icon"/> Delete the sammelband</p>
         
-            <p><img src={ downloadIcon } alt="Download icon"/> Download the Sammelband to your device</p>
+            <p><img src={ downloadIcon } alt="Download icon"/> Download the sammelband to your device</p>
         
-            <p><img src={ mailIcon } alt="Mail icon"/> Send an email with the Sammelband contents as the email body</p>
+            <p><img src={ mailIcon } alt="Mail icon"/> Send an email with the sammelband contents as the email body</p>
     
-            <p><img src={ attachmentIcon } alt="Attachment icon"/> Send an email with the Sammelband as a file attachment</p>
+            <p><img src={ attachmentIcon } alt="Attachment icon"/> Send an email with the sammelband as a file attachment</p>
+
+            <p><i>Note: Sammelband is NOT an archival service. Your sammelband is overwritten with every request and deleted from the server after some time.</i></p>
            
 
             <h4 id="supported-temp-emails">Supported temporary emails</h4>
@@ -105,6 +109,7 @@ function About() {
 
             <h3>Technical stuff</h3>
             <h4>Back-end</h4>
+            <a href="https://github.com/PizzaMyHeart/sammelband-server" target="_blank" rel="noreferrer">Source</a>
             <ul>
                 <li> Node
                     <ul>
@@ -118,6 +123,7 @@ function About() {
                 <li>Puppeteer</li>
             </ul>
             <h4>Front-end</h4>
+            <a href="https://github.com/PizzaMyHeart/sammelband-frontend" target="_blank" rel="noreferrer">Source</a>
             <ul>
                 <li>React</li>
                 <li>sakura.css</li>
