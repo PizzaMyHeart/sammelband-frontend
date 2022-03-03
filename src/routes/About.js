@@ -25,6 +25,7 @@ function About() {
             </p>
 
             <h3>How</h3>
+            <a href="https://github.com/PizzaMyHeart/sammelband-frontend#demo-video" target="_blank" rel="noreferrer">Demo video</a>
             <p>1. Supply one or more URLs manually or by connecting to your <a href="getpocket.com/">Pocket</a> account.</p>
             <p>2. Select style and format options for your sammelband. </p>
             <p>3. To receive the resulting file as an email or an email attachment</p>
@@ -49,7 +50,7 @@ function About() {
            
 
             <h4 id="supported-temp-emails">Supported temporary emails</h4>
-            <p>Create an account to use your own email address. Otherwise, use a temporary email service.</p>
+            <p>Create an account to use your own email address. Otherwise, use a temporary email service from the list below.</p>
             <ul>
                 <li><a href="https://mail.tm/en/" target="_blank" rel="noreferrer">mail.tm</a> (best option - applies Sammelband HTML styles)</li>
                 <li><a href="https://temp-mail.org/en/" target="_blank" rel="noreferrer">temp-mail.org</a> (uses their own HTML styles)</li>
@@ -81,7 +82,7 @@ function About() {
 
             <h3>A note on privacy</h3>
             <h4>Cookies</h4>
-            <p>This website uses cookies for session management (i.e. ensure that Sammelbands are sent to the right user, along with the correct user preferences). 
+            <p>This website uses cookies for session management (i.e. ensure that sammelbands are sent to the right user, along with the correct user preferences). 
                 No other tracking beyond that is implemented.
             </p>
             <h4>Personal information</h4>
@@ -94,13 +95,14 @@ function About() {
                 When you use this app, your public IP address (derived from standard HTTP request headers) is logged on the server. That's it.
             </p>
 
-            <p>This is done for basic website traffic statistics and to prevent abuse.</p>
+            <p>This is done to provide basic website traffic statistics and to prevent abuse.</p>
             
             <h3>ಠ_ಠ</h3>
             <h6>Known limitations</h6>
             <ul>
                 <li>Sammelband styling is a work in progress</li>
-                <li>The ordering of articles in a Sammelband cannot be altered</li>
+                <li>Sammelband styling is inconsistent on some email clients</li>
+                <li>The ordering of articles in a sammelband cannot be altered</li>
             </ul>
             <h6>Found a bug?</h6>
             <p>Please <a href="mailto:admin@sammelband.app">send me an email</a>.</p>
