@@ -183,3 +183,9 @@ input[type="url"] {
 .small-text {
   font-size: 0.75em;
 }
+
+footer {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}

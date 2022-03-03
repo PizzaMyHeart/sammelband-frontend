@@ -73,7 +73,23 @@ function About() {
             <p>Yes! This is a learning project that has been challenging enough without the overhead of running a business. </p>
 
             <p>That said, please consider <Link to="/donate">donating</Link> if you find this useful. Any amount will help offset hosting costs.</p>
-         
+
+            <h3>A note on privacy</h3>
+            <h4>Cookies</h4>
+            <p>This website uses cookies for session management (i.e. ensure that Sammelbands are sent to the right user, along with the correct user preferences). 
+                No other tracking beyond that is implemented.
+            </p>
+            <h4>Personal information</h4>
+            <p>
+                If you create an account&mdash;which is entirely optional, as outlined above&mdash;your email is stored on the server. 
+                Account deletion is yet to be implemented but in the meantime please <a href="mailto:admin@sammelband.app">send me an email</a> if you would like to delete your account.
+            </p>
+            <h4>Web analytics</h4>
+            <p>
+                When you use this app, your public IP address (derived from standard HTTP request headers) is logged on the server. That's it.
+            </p>
+
+            <p>This is done for basic website traffic statistics and to prevent abuse.</p>
             
             <h3>ಠ_ಠ</h3>
             <h6>Known limitations</h6>
