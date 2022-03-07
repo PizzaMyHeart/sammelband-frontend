@@ -103,6 +103,7 @@ function About() {
                 <li>Sammelband styling is a work in progress</li>
                 <li>Sammelband styling is inconsistent on some email clients</li>
                 <li>The ordering of articles in a sammelband cannot be altered</li>
+                <li>I'm still figuring out EPUB styling</li>
             </ul>
             <h6>Found a bug?</h6>
             <p>Please <a href="mailto:admin@sammelband.app">send me an email</a>.</p>
