@@ -39,12 +39,12 @@ function Form(props) {
     
     //console.log(allUrls);
     // Form validation
-    console.log(allUrls);
+    //console.log(allUrls);
     const formIsValid = (formErrors.url.length === 0 
         && formErrors.email === false
         && allUrls.length > 0);
 
-    console.log('Form is Valid: ', formIsValid);
+    //console.log('Form is Valid: ', formIsValid);
 
 
    
@@ -57,7 +57,7 @@ function Form(props) {
             return;
         }
         if (!formIsValid) return;
-        console.log(allUrls.length);
+        //console.log(allUrls.length);
         setLoading(true);
         setSuccess(false);
         setDeleted(false);
@@ -88,7 +88,7 @@ function Form(props) {
                 return response.json()
             } else {
                 setLoading(false);
-                console.log('Unsuccesful submit');
+                //console.log('Unsuccesful submit');
                 response.text().then(text => setSubmitError(text));
             }
         })
@@ -102,7 +102,7 @@ function Form(props) {
 
     const setRadioValues = (e) => {
         const value = e.target.value
-        console.log(value);
+        //console.log(value);
         switch(e.target.name) {
             case 'color':
                 setColor(value);
