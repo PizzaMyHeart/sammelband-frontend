@@ -184,7 +184,7 @@ function Form(props) {
                     <div>
                         { success && <p>Sammelband ready</p> }
                         { deleted && <p className="fade-out">Sammelband deleted</p>}
-                        { emailSent && <p className="fade-out">Sammelband sent to your email</p>}
+                        { emailSent && <p>Sammelband sent to your email</p>}
                     </div>
                 </div>
                 
