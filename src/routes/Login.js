@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 
 function Login(props) {
 
-    const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
     const [email, setEmail] = [props.email, props.setEmail];
 
-    const [loggedIn, setLoggedIn] = [props.loggedIn, props.setLoggedIn];
+    const setLoggedIn = props.setLoggedIn;
     const [loginError, setLoginError] = useState(null);
 
     const handleSubmit = (e) => {

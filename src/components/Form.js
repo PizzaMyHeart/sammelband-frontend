@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Buttons from './Buttons';
-import Loading from './Loading';
 import Logout from './Logout';
 import Email from './Email';
 import Pocket from './Pocket';
@@ -21,7 +20,7 @@ function Form(props) {
     const [pocketList, setPocketList] = useState(null);
     const [pocketLoggedIn, setPocketLoggedIn] = [props.pocketLoggedIn, props.setPocketLoggedIn]
     const [loggedIn, setLoggedIn] = [props.loggedIn, props.setLoggedIn]; // App login state
-    const [loggedInAs, setLoggedInAs] = [props.loggedInAs, props.setLoggedInAs] // Display name
+    const loggedInAs = props.loggedInAs // Display name
     const verified = props.verified;
 
     // Form data

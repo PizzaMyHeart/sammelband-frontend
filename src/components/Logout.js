@@ -1,5 +1,3 @@
-import logoutIcon from '../icons/log-out.svg';
-
 function Logout(props) {
     const setLoggedIn = props.setLoggedIn;
 
