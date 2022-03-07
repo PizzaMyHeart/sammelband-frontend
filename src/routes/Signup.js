@@ -1,14 +1,24 @@
 import { useState } from 'react';
 import ResendVerification from '../components/ResendVerification';
 
-function Signup(props) {
-    const [newPassword, setNewPassword] = useState(null);
+function Signup() {
     const [newEmail, setNewEmail] = useState(null);
-    const [formErrors, setFormErrors] = [props.formErrors, props.setFormErrors];
+    const [newPassword, setNewPassword] = useState(null);
+    
+    const [signupError, setSignupError] = useState({email: false, password: false});
+    
+    
     const [success, setSuccess] = useState(false);
-
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!newEmail) {
+            setSignupError({...signupError, email: true});
+        } else if (!newPassword) {
+            setSignupError({...signupError, password: true});
+        }
+        
+        if (!newEmail || !newPassword) return;
+        if (Object.values(signupError).includes(false)) return;
         fetch(`${process.env.REACT_APP_API_DOMAIN}/api/signup`, {
             credentials: 'include',
             method: 'POST',
@@ -34,25 +44,42 @@ function Signup(props) {
         const email = e.target.value;
         const emailIsValid = RegExp(/^\S+@\S+\.\S\S+/).test(email);
         !emailIsValid 
-        ? setFormErrors({...formErrors, email: true})
-        : setFormErrors({...formErrors, email: false});
+        ? setSignupError({...signupError, email: true})
+        : setSignupError({...signupError, email: false});
     }
 
+    const validatePassword = (e) => {
+        const password = e.target.value;
+        const passwordIsValid = RegExp(/^\S+$/).test(password);
+        !passwordIsValid 
+        ? setSignupError({...signupError, password: true})
+        : setSignupError({...signupError, password: false});
+    }
     return (
         <>  
             <h4>Sign up</h4>
             <form onSubmit={ handleSubmit }>
-                <div>Email: 
+                <div>
                     <input 
                         type="email" 
                         placeholder="Your email"
                         onChange={ e => setNewEmail(e.target.value) }
                         onBlur={e => validateEmail(e)} 
                         />
+                    { signupError.email && <p>Please enter a valid email address.</p> }
                 </div>
-                <div>Password: <input type="password" onChange={ e => setNewPassword(e.target.value) }/></div>
+                
+                <div>
+                    <input 
+                        type="password" 
+                        placeholder="Choose a password"
+                        onChange={ e => setNewPassword(e.target.value) }
+                        onBlur={ e => validatePassword(e) }
+                        />
+                    { signupError.password && <p>Please choose a valid password. No whitespace characters.</p>}
+                </div>
                 <input type="submit" value="Sign up"/>
-                { formErrors.email && <p>Please enter a valid email address.</p> }
+                
                 { success && 
                     <div>
                         <p>Verification email sent. Please check your inbox at { newEmail }</p>
