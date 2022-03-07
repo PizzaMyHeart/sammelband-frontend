@@ -18,7 +18,7 @@ function Signup() {
         }
         
         if (!newEmail || !newPassword) return;
-        if (Object.values(signupError).includes(false)) return;
+        if (Object.values(signupError).includes(true)) return;
         fetch(`${process.env.REACT_APP_API_DOMAIN}/api/signup`, {
             credentials: 'include',
             method: 'POST',

@@ -6,6 +6,7 @@ import Email from './Email';
 import Pocket from './Pocket';
 import UrlContainer from './UrlContainer';
 import ResendVerification from './ResendVerification';
+import Loading from './Loading';
 
 
 function Form(props) {
@@ -173,6 +174,7 @@ function Form(props) {
                 }
                 <input type="submit" value="Submit" />
                 </div>
+                { loading && <Loading />}
                 <div id="messages">
                     <div id="error-messages">
                         { submitError && <p>{ submitError }</p>}
