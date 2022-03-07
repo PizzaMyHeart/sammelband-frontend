@@ -11,10 +11,7 @@ function UrlContainer(props) {
         setUserUrls(newUrls);
     }
 
-    const handleCheckboxChange = (e) => {
-        console.log(e.target.checked);
-        console.log('checkbox')
-    }
+
 
     return (
         <>
@@ -30,7 +27,6 @@ function UrlContainer(props) {
                                 userUrls={ userUrls }
                                 setUserUrls={ setUserUrls }
                                 url={ userUrls[key] }
-                                handleCheckboxChange= { handleCheckboxChange }
                                 formErrors={ formErrors }
                                 setFormErrors={ setFormErrors }
                             />

@@ -164,9 +164,9 @@ function Form(props) {
                 <div>
                 
                 { 
-                    (loggedIn && verified)
-                    ? <p>Your email: { email }</p>
-                    : <Email 
+                    !(loggedIn && verified) &&
+                    
+                    <Email 
                         formErrors={ formErrors } setFormErrors={ setFormErrors }
                         loading={ loading } 
                         setEmail= { setEmail }
@@ -184,7 +184,7 @@ function Form(props) {
                     <div>
                         { success && <p>Sammelband ready</p> }
                         { deleted && <p className="fade-out">Sammelband deleted</p>}
-                        { emailSent && <p>Sammelband sent to your email</p>}
+                        { emailSent && <p>Sammelband sent to { email }</p>}
                     </div>
                 </div>
                 

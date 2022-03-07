@@ -25,7 +25,7 @@ function Email(props) {
                 onBlur={e => validateEmail(e)}                        
                 />
             <a href="/about/#supported-temp-emails">Supported emails</a>
-            <div>{ loading && <Loading />}</div>
+            <div></div>
             { formErrors.email && <p>Please enter a valid email</p> }
         </>
     )
